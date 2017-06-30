@@ -37,7 +37,7 @@ class Controller {
 
 			output = output.substring(0, output.lastIndexOf(System.lineSeparator()));
 
-			return new ProcessResult(process.exitValue(), output);
+			return new ProcessResult(process.waitFor(), output);
 		} catch (Exception e) {
 			Log.printException(e);
 			return null;
